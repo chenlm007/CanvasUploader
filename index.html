@@ -1,0 +1,30 @@
+<html>
+	<head>
+		<title>File Uploader</title>
+	</head>
+
+	<body>
+		<center>
+			<h1>File Upload Test</h1>
+
+			<table border='1'>
+				<tr>
+					<td style='text-align: center;'>Preview:</td>
+					<td align='center'><img id='filePreview' src='images/placeholder.png' width='100' border='1'></td>
+				</tr>
+				<tr>
+					<td>Hidden Field:</td>
+					<td><input id='fileName' style='width:200px;'></td>
+				</tr>
+			</table>
+			
+			<br>
+			
+			<input style='display:none' type='file' id='fileInput' onChange='getUpload()'>
+			<button type='button' onClick='document.getElementById("fileInput").click();'>Open</button>
+			<button type='button' onClick='sendUpload()'>Upload</button>
+		</center>
+		
+		<script src='scripts/upload.js'></script>
+	</body>
+</html>	
