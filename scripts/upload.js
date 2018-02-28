@@ -69,6 +69,20 @@ function getUpload() {
 					canvas.height = img.height;
 					ctx.drawImage(img, 0, 0, img.width, img.height);
 					
+					// Convert the image to black and white.
++					/*var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
++					var data = imageData.data;
++					for(var i = 0; i < data.length; i += 4) {
++						data[i + 0] = data[i + 1] = data[i + 2] = (data[i] + data[i + 1] + data[i + 2]) / 3;
++					}
++					ctx.putImageData(imageData, 0, 0);
++
++					var grayImg = new Image();
++					grayImg.onload = function() {
++						document.body.appendChild(aImg);
++						document.body.appendChild(grayImg);
++					}*/
+					
 					// Convert the canvas to Base64 and create unique file ID.
 					var dataURL = canvas.toDataURL("image/png");
 					var fileName = file.name.replace(/\.[^.]+$|\W/g, "");
